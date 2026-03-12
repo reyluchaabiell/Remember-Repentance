@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remember Repentance</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #262627;
+        color: #edf2f4;
+        text-align: center;
+        padding: 50px;
+    }
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 30px;
+        color: #ef233c;
+        text-shadow: 2px 2px #000;
+    }
+    input {
+        padding: 10px;
+        font-size: 1em;
+        border-radius: 5px;
+        border: none;
+        width: 150px;
+        text-align: center;
+        margin-right: 10px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+        border-radius: 5px;
+        border: none;
+        background-color: #ef233c;
+        color: #edf2f4;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    button:hover {
+        background-color: #d90429;
+    }
+    #result {
+        margin-top: 30px;
+        font-size: 1.2em;
+        background: rgba(0,0,0,0.3);
+        padding: 20px;
+        border-radius: 10px;
+        display: inline-block;
+    }
+</style>
+</head>
+<body>
+
+<h1>Remember Repentance Before You Regret It</h1>
+
+<div>
+    <input type="number" id="ageInput" placeholder="Masukkan umurmu" min="0" max="120">
+    <button onclick="calculateLife()">Hitung Sisa Waktu</button>
+</div>
+
+<div id="result"></div>
+
+<script>
+function calculateLife() {
+    var age = document.getElementById("ageInput").value;
+    if (age === "" || age < 0 || age > 120) {
+        alert("Tolong masukkan umur yang valid!");
+        return;
+    }
+    var yearsLeft = 72 - age;
+    var daysLeft = yearsLeft * 365;
+    var weeksLeft = yearsLeft * 52;
+    var monthsLeft = yearsLeft * 12;
+
+    var message = "Kamu punya " + daysLeft + " hari, " + weeksLeft + " minggu, dan " + monthsLeft + " bulan tersisa. <br><br>Gunakan waktumu dengan baik dan ingat untuk bertaubat sebelum menyesal!";
+    document.getElementById("result").innerHTML = message;
+}
+</script>
+
+</body>
+</html>
